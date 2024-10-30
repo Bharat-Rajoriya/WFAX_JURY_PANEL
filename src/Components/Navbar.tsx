@@ -14,8 +14,8 @@ const Navbar = () => {
           </div>
         <div className="container">
           <a className="navbar-brand" href="#">
-            <img src="/Images/logo.webp" alt="logo" height="80px" />            
             <img src="/Images/logo.webp" alt="logo" height="80px" />
+            
             <div className="login_box">
             </div>
           </a>
