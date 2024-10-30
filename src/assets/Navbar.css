@@ -31,10 +31,11 @@
     animation-play-state: paused;
   }
 
-  .main_container{
+  .main_container_navbar{
     background-color: #00000090;
-    position: fixed;
+    /* position: fixed; */
     top: 0;
+    z-index: 99999;
   }
 
 
