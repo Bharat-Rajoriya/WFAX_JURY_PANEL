@@ -1,0 +1,58 @@
+
+.marquee_background{
+    background-color: #F29F27;
+    
+}
+
+.marquee {
+    display: flex;
+    align-items: center;
+    background-color: #F29F27;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100vw;
+    padding: 10px 0;
+  }
+  
+  .marquee b {
+    margin-right: 10px;
+  }
+  
+  .marquee a {
+    margin-right: 30px;
+  }
+  
+  .marquee::after {
+    content: "                      "; /* Adjust spacing as needed */
+  }
+  
+  .marquee:hover {
+    animation-play-state: paused;
+  }
+
+  .main_container{
+    background-color: #00000090;
+  }
+
+
+  .container{
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  @keyframes scroll {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .marquee {
+    animation: scroll 20s linear infinite;
+  }
+  
