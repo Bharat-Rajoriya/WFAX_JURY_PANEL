@@ -33,6 +33,8 @@
 
   .main_container{
     background-color: #00000090;
+    position: fixed;
+    top: 0;
   }
 
 
