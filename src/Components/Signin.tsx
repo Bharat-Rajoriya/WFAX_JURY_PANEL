@@ -13,7 +13,7 @@ const Signin = () => {
         <div className="form">
         <form action="/register" method="post">
           <input type="email" name="email" placeholder="Email" id="email" />
-          <button>Submit</button>
+          <button className="btn_submit">Submit</button>
           </form>
         </div>
         </div>
