@@ -14,13 +14,14 @@ const Navbar = () => {
           </div>
         <div className="container">
           <a className="navbar-brand" href="#">
-            <img src="/Images/logo.webp" alt="logo" height="80px" />
+            <img src="/Images/logo.webp" alt="logo" height="80px" />            
+         
             <div className="login_box">
-            {/* <FontAwesomeIcon icon={faUserTie} style={{color: "#ffffff",}} />
-            <FontAwesomeIcon icon={faThumbsUp} style={{color:'white'}}/> */}
-              
             </div>
           </a>
+          <div className="login_box">
+            <FontAwesomeIcon icon={faUserTie} style={{color: "#ffffff",fontSize:'30px'}} />
+            </div>
         </div>
     </div>
    

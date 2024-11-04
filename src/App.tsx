@@ -3,7 +3,7 @@ import './App.css'
 import Jury_panel from './Components/Jury_panel'
 import Navbar from './Components/Navbar'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Signin from './Components/Signin111'
+import Signin from './Components/Signin'
 
 function App() {
 

@@ -7,13 +7,17 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-image: url('/public/Images/bg.webp');
+    background-blend-mode: darken;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .singin_form_block{
     padding: 50px 30px;
     border-radius: 20px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
     min-width: 500px;
     
 }
@@ -69,3 +73,17 @@
     text-decoration: none;
   }
   
+  .btn_submit{
+    background-color: #F29F27 !important;
+    font-weight: 500;
+    border: solid 2px #F29F27 !important;
+    transition: all;
+    transition-duration: .3s;
+  }
+
+  .btn_submit:hover{
+    background-color: white !important;
+    font-weight: 500;
+    color: #F29F27;
+    border: solid 2px #F29F27 !important;
+  }
