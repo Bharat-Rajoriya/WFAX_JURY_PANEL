@@ -13,7 +13,6 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/jury" element={<Jury_panel />} />
-         
           <Route path='/' element={<Signin/>}/>
         </Routes>
       </BrowserRouter>
