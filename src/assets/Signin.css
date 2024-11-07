@@ -3,7 +3,7 @@
 
 .singin_container{
     display: flex;
-    height: 100vh;
+    height: 83vh;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -17,9 +17,8 @@
 .singin_form_block{
     padding: 50px 30px;
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    min-width: 500px;
-    
+    background-color: #fff;
+    min-width: 500px;    
 }
 
 .card_title {
@@ -68,11 +67,6 @@
     font-size: 13px;
   }
   
-  .card a {
-    color: #4796ff;
-    text-decoration: none;
-  }
-  
   .btn_submit{
     background-color: #F29F27 !important;
     font-weight: 500;
@@ -82,8 +76,8 @@
   }
 
   .btn_submit:hover{
-    background-color: white !important;
+    background-color: #000 !important;
     font-weight: 500;
-    color: #F29F27;
-    border: solid 2px #F29F27 !important;
+    color: #fff;
+    border: solid 2px #000 !important;
   }
