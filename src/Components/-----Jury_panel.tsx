@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import "../assets/jury.css";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import "../assets/jury.css"
-
 import { Dialog, DialogContent, DialogTitle, IconButton, Typography, Menu, MenuItem } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -114,11 +113,10 @@ const Jury_panel = () => {
 
   }, []);
 
-
   return (
     <>
-        <div className="row">
-        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div className="row">
+        <div className="col-xs-12">
           <table className="table table-bordered table-hover dt-responsive">
             <thead>
               <tr>
@@ -145,7 +143,7 @@ const Jury_panel = () => {
                     className="btn btn-primary btn-sm p-1" style={{width:'50%', height:'40px'}}
                       onClick={(e) => handleDropdownClick(e, index, item.id,item)}
                     >
-                      Rate
+                      Select
                     </button>
                     
                     <Menu
@@ -202,7 +200,12 @@ const Jury_panel = () => {
         </DialogContent>
       </Dialog>
     </>
-  )
-}
+  );
+};
 
-export default Jury_panel
+export default Jury_panel;
+
+
+
+
+

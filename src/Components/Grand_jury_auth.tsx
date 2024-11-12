@@ -1,38 +1,45 @@
-import React, { useEffect, useState } from 'react'
+
+import React, { useEffect, useRef, useState } from 'react'
 import "../assets/Signin.css"
 import axios from 'axios'
 import { useNavigate,  } from 'react-router-dom'
+import { Toast } from 'primereact/toast';
 
-const Signin = () => {
+const Grand_jury_auth = () => {
   const navigate = useNavigate();
+  const toast = useRef<Toast>(null);
   const [formdata, setFormdata] = useState({
     email:''
   })
 
+  const showError = () => {
+    toast.current?.show({severity:'error', summary: 'Error', detail:'Email does not exist in the records.', life: 3000});
+}
+
   const handleSubmit = (e:any) => {
     e.preventDefault()
-    axios.post('http://localhost:5001/jurycheck', formdata)
+    axios.post('http://localhost:5001/checkgrandjury', formdata)
     .then(res => {
-        console.log(res.data);
+        console.log(res.data.status);
        if(res.data.message === 'success'){
-         navigate('/jury');
+         navigate('/grand_jury');
        }
     })
     .catch(err => {
-      if (err.response && err.response.status === 404 && err.response.data.message === 'Email does not exist') {
-        alert("Email does not exist Please contact admin");
+        if (err.response && err.response.status === 404 && err.response.data.message === 'Email does not exist') {
+            alert("Email does not exist Please contact admin");
+            showError();
+        } else {
+            console.error("Error:", err);
+        }
         
-    } else {
-        console.error("Error:", err);
-    }
     });
 
   }
-  useEffect(()=>{
 
-  },[])
   return (
    <>
+    <Toast ref={toast}  position="top-left"/>
    <div className="singin_container">
         <div className="singin_form_block">
         <div className="card_title">
@@ -51,4 +58,5 @@ const Signin = () => {
   )
 }
 
-export default Signin
+export default Grand_jury_auth
+

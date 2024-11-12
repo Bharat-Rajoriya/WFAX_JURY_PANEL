@@ -3,7 +3,7 @@ import "../assets/Signin.css"
 import axios from 'axios'
 import { useNavigate,  } from 'react-router-dom'
 
-const Signin = () => {
+const Candidate_auth = () => {
   const navigate = useNavigate();
   const [formdata, setFormdata] = useState({
     email:''
@@ -11,26 +11,24 @@ const Signin = () => {
 
   const handleSubmit = (e:any) => {
     e.preventDefault()
-    axios.post('http://localhost:5001/jurycheck', formdata)
+    axios.post('http://localhost:5001/checkcandidate', formdata)
     .then(res => {
         console.log(res.data);
        if(res.data.message === 'success'){
-         navigate('/jury');
+         navigate('/candidate_submission');
        }
     })
     .catch(err => {
-      if (err.response && err.response.status === 404 && err.response.data.message === 'Email does not exist') {
-        alert("Email does not exist Please contact admin");
-        
-    } else {
-        console.error("Error:", err);
-    }
+        if (err.response && err.response.status === 404 && err.response.data.message === 'Email does not exist') {
+            alert("Email does not exist Please contact admin");
+            
+        } else {
+            console.error("Error:", err);
+        }
     });
 
   }
-  useEffect(()=>{
 
-  },[])
   return (
    <>
    <div className="singin_container">
@@ -51,4 +49,4 @@ const Signin = () => {
   )
 }
 
-export default Signin
+export default Candidate_auth
