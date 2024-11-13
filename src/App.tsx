@@ -19,6 +19,7 @@ function App() {
       >
         <Navbar />
         <Routes>
+          <Route path='/' element={<Signin />} />
           <Route path="/jury" element={<Jury_panel />} />
           <Route path='/jury_auth' element={<Signin />} />
           <Route path='/admin_dashboard' element={<Admin_panel />} />
