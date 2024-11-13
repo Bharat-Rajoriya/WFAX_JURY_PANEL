@@ -13,7 +13,10 @@ const Signin = () => {
     e.preventDefault()
     axios.post('http://localhost:5001/jurycheck', formdata)
     .then(res => {
-        console.log(res.data);
+        console.log(res.data,"data is here");
+        var jury_data = res.data;
+        console.log(jury_data.data,"data is here");
+        localStorage.setItem('jury_data', JSON.stringify(jury_data.data));
        if(res.data.message === 'success'){
          navigate('/jury');
        }

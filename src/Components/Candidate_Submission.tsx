@@ -13,6 +13,7 @@ const Candidate_Submission = () => {
         link1: "",
         link2: "",
         link3: ""
+
     });
     var navigate = useNavigate();
 
@@ -56,7 +57,6 @@ return (
         <div className="form_wrapper">
             <div className="form_container">
                 <div className="row clearfix">
-                    {/* <div className=""> */}
                         <form id="inquiryForm" onSubmit={submit_form}>
                             <div className="input_field select_option">
                             <select name="category" required onChange={e => setValue({...value, category:e.target.value})}>
@@ -79,11 +79,11 @@ return (
                                 <input type="text" name="link3" placeholder="Link 3" onChange={e => setValue({...value, link3:e.target.value})} />
                             </div>
                            
+
                             <div className="input_field select_option text-center">
                                 <button type="submit" className="btn btn-sm bg-warning text-light w-50">Sign-up</button>
                             </div>
                         </form>
-                    {/* </div> */}
                 </div>
             </div>
         </div>

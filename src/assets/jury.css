@@ -6,7 +6,9 @@ body {
     box-sizing: border-box;
   }
   
-  /* Assign grid instructions to our parent grid container, mobile-first (hide the sidenav) */
+  .table>:not(caption)>*>* {
+    padding: 0px !important;
+  }
   .grid-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -16,7 +18,7 @@ body {
   }
   
   .menu-icon {
-    position: fixed; /* Needs to stay visible for all mobile scrolling */
+    position: fixed; 
     display: flex;
     top: 5px;
     left: 10px;
@@ -29,7 +31,6 @@ body {
     padding: 12px;
   }
   
-  /* Give every child element its grid name */
   .header {
     grid-area: header;
     display: flex;
@@ -39,7 +40,6 @@ body {
     background-color: #648ca6;
   }
   
-  /* Make room for the menu icon on mobile */
   .header__search {
     margin-left: 42px;
   }
@@ -55,7 +55,7 @@ body {
     transform: translateX(-245px);
     transition: all .6s ease-in-out;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
-    z-index: 2; /* Needs to sit above the hamburger menu icon */
+    z-index: 2; 
     background-color: #F29F27;
   }
   
@@ -127,11 +127,8 @@ body {
   }
   
   
-  /* Non-mobile styles, 750px breakpoint */
   @media only screen and (min-width: 46.875em) {
-    /* Show the sidenav */
     .grid-container {
-      /* grid-template-columns: 0px 1fr; */
       grid-template-areas:
         "sidenav header"
         "sidenav main"
@@ -152,9 +149,7 @@ body {
     }
   }
   
-  /* Medium screens breakpoint (1050px) */
   @media only screen and (min-width: 65.625em) {
-    /* Break out main cards into two columns */
     .main-cards {
       column-count: 2;
     }

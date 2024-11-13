@@ -1,4 +1,6 @@
-
+.main_container_navbar{
+  overflow: hidden;
+}
 .marquee_background{
     background-color: #F29F27;
     

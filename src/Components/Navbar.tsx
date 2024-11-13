@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../assets/Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserTie , faThumbsUp} from '@fortawesome/free-solid-svg-icons';
+import { faUserTie } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
+  const [juryName, setJuryName] = useState(''); 
+  useEffect(()=>{
+    var juryDataString = localStorage.getItem('jury_data');
+    if (juryDataString) {
+      var jury_data = JSON.parse(juryDataString);
+      setJuryName(jury_data[0].full_name);
+      
+    }else{
+      console.log("No jury data found");
+    }
+    
+  },[])
   return (
     <>
     <div className="main_container_navbar">
@@ -21,6 +33,7 @@ const Navbar = () => {
           </a>
           <div className="login_box">
             <FontAwesomeIcon icon={faUserTie} style={{color: "#ffffff",fontSize:'30px'}} />
+             <h4 style={{color:"#ffffff"}}>{juryName}</h4>
             </div>
         </div>
     </div>
